@@ -1,0 +1,312 @@
+:root {
+    --bg-dark: #0a0514;
+    --primary-purple: #8a2be2;
+    --neon-accent: #bc13fe;
+    --text-white: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.7);
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover: rgba(188, 19, 254, 0.2);
+    --glow: 0 0 15px rgba(188, 19, 254, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.gradient-bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #2e1065 0%, #0a0514 60%);
+    animation: move-bg 15s ease infinite alternate;
+}
+
+@keyframes move-bg {
+    0% {
+        transform: translate(-25%, -25%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Header Section */
+.profile-section {
+    margin-bottom: 2.5rem;
+}
+
+.logo-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(45deg, var(--primary-purple), var(--neon-accent));
+    box-shadow: var(--glow);
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #000;
+}
+
+.brand-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--neon-accent);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+
+.badges {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.badges span {
+    white-space: nowrap;
+}
+
+.separator {
+    opacity: 0.3;
+}
+
+
+
+/* Telegram Notice */
+.telegram-notice {
+    background: rgba(188, 19, 254, 0.1);
+    border: 1px dashed var(--neon-accent);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+}
+
+.telegram-notice i {
+    color: var(--neon-accent);
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+}
+
+.telegram-notice p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-white);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-btn i {
+    font-size: 1.2rem;
+}
+
+.link-btn:hover {
+    transform: scale(1.05);
+    background: var(--btn-hover);
+    border-color: var(--neon-accent);
+    box-shadow: var(--glow);
+}
+
+/* Footer */
+.footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .logo-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .brand-name {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+    }
+
+    .badges {
+        font-size: 0.7rem;
+        gap: 0.3rem;
+    }
+
+    .hero-banner {
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 350px) {
+    .badges {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+/* Tablet and Desktop specific tweaks (optional but good for balance) */
+@media (min-width: 768px) {
+    .hero-banner {
+        border-radius: 25px;
+    }
+}

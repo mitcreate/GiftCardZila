@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card Zila | Daily PhonePe Gift Card Contest</title>
+    <meta name="description"
+        content="Join Gift Card Zila for daily PhonePe Gift Card giveaways. No entry fee, real winners, daily contests.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="gradient-bg"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <main class="container">
+        <header class="profile-section animate-fade-in">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Gift Card Zila Logo" class="logo">
+            </div>
+            <h1 class="brand-name">Gift Card Zila</h1>
+            <p class="tagline">Daily PhonePe Gift Card Contest</p>
+            <div class="badges">
+                <span>No Entry Fee</span>
+                <span class="separator">|</span>
+                <span>Real Winners</span>
+                <span class="separator">|</span>
+                <span>Daily Giveaway</span>
+            </div>
+        </header>
+
+
+
+        <div class="telegram-notice animate-fade-in" style="--delay: 0.2s">
+            <i class="fas fa-bullhorn"></i>
+            <p>Contest links Telegram mein milenge, so must join Telegram!</p>
+        </div>
+
+        <section class="links-section">
+            <a href="https://youtube.com/@GiftCardZila" target="_blank" class="link-btn animate-slide-up"
+                style="--delay: 0.1s">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+            <a href="https://instagram.com/GiftCardZila" target="_blank" class="link-btn animate-slide-up"
+                style="--delay: 0.2s">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://facebook.com/GiftCardZila" target="_blank" class="link-btn animate-slide-up"
+                style="--delay: 0.3s">
+                <i class="fab fa-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://t.me/GiftCardZila" target="_blank" class="link-btn animate-slide-up" style="--delay: 0.4s">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram Channel</span>
+            </a>
+        </section>
+
+        <footer class="footer animate-fade-in">
+            <p>&copy; <span id="current-year"></span> Gift Card Zila – All Rights Reserved</p>
+        </footer>
+    </main>
+
+    <script>
+        // Subtle background particles effect
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.opacity = Math.random();
+            particleContainer.appendChild(particle);
+        }
+
+        // Auto-update year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
